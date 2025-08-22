@@ -1,14 +1,18 @@
-const fs = require('fs');
-const path = require('path');
+#!/usr/bin/env node
 
-function getVersion() {
+import * as fs from 'fs';
+import * as path from 'path';
+import { runWithHook } from '../lib/execute';
+
+function getVersion(): string {
+  const packageJsonPath = path.join(__dirname, '..', '..', 'package.json');
   const packageJson = JSON.parse(
-    fs.readFileSync(path.join(__dirname, '..', 'package.json'), 'utf8')
+    fs.readFileSync(packageJsonPath, 'utf8')
   );
   return packageJson.version;
 }
 
-function showHelp() {
+function showHelp(): void {
   console.log(`
 aahook - Display ASCII art when commands succeed or fail
 
@@ -28,11 +32,11 @@ For more information, visit: https://github.com/yourusername/aahook
 `);
 }
 
-function showVersion() {
+function showVersion(): void {
   console.log(`aahook v${getVersion()}`);
 }
 
-function main() {
+function main(): void {
   const args = process.argv.slice(2);
   
   if (args.length === 0) {
@@ -62,8 +66,8 @@ function main() {
       break;
       
     default:
-      console.log(`Executing command: ${args.join(' ')}`);
-      console.log('Command execution not yet implemented');
+      // Execute command with hook
+      runWithHook(args);
   }
 }
 

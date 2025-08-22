@@ -2,12 +2,19 @@
   "name": "aahook",
   "version": "0.1.0",
   "description": "A CLI tool that displays ASCII art when commands succeed or fail",
-  "main": "index.js",
+  "main": "dist/lib/index.js",
   "bin": {
     "aahook": "./bin/aahook.js"
   },
   "scripts": {
-    "test": "node test/test.js"
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "node test/test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
   },
   "keywords": [
     "cli",
