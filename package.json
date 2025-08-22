@@ -1,0 +1,37 @@
+{
+  "name": "aahook",
+  "version": "0.1.0",
+  "description": "A CLI tool that displays ASCII art when commands succeed or fail",
+  "main": "index.js",
+  "bin": {
+    "aahook": "./bin/aahook.js"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "cli",
+    "ascii-art",
+    "hook",
+    "command",
+    "terminal"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "assets/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/aahook.git"
+  },
+  "homepage": "https://github.com/yourusername/aahook#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/aahook/issues"
+  }
+}
