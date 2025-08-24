@@ -1,0 +1,42 @@
+# Source files
+src/
+*.ts
+!*.d.ts
+
+# Test files
+test/
+*.test.js
+*.spec.js
+
+# Development files
+.tmp/
+*.log
+.DS_Store
+node_modules/
+tsconfig.json
+.git/
+.gitignore
+
+# Build files
+*.map
+
+# Documentation source
+docs/
+*.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+
+# Development dependencies
+bun.lock
+package-lock.json
+yarn.lock
+
+# Keep only essential files for npm package
+# dist/, bin/, assets/ will be included

@@ -3,6 +3,8 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { runWithHook } from '../lib/execute';
+import { initCommand } from '../lib/init';
+import { listCommand } from '../lib/list';
 
 function getVersion(): string {
   const packageJsonPath = path.join(__dirname, '..', '..', 'package.json');
@@ -28,7 +30,7 @@ Examples:
   aahook ls              # Run ls command with ASCII art
   aahook git push        # Run git push with custom success/error art
 
-For more information, visit: https://github.com/yourusername/aahook
+For more information, visit: https://github.com/MidoriTakahashi77/aahook
 `);
 }
 
@@ -58,11 +60,14 @@ function main(): void {
       break;
       
     case 'init':
-      console.log('Init command not yet implemented');
+      initCommand().catch(error => {
+        console.error(error.message);
+        process.exit(1);
+      });
       break;
       
     case 'list':
-      console.log('List command not yet implemented');
+      listCommand();
       break;
       
     default:

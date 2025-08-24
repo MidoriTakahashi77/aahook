@@ -35,10 +35,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/aahook.git"
+    "url": "git+https://github.com/MidoriTakahashi77/aahook.git"
   },
-  "homepage": "https://github.com/yourusername/aahook#readme",
+  "homepage": "https://github.com/MidoriTakahashi77/aahook#readme",
   "bugs": {
-    "url": "https://github.com/yourusername/aahook/issues"
+    "url": "https://github.com/MidoriTakahashi77/aahook/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
