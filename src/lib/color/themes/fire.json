@@ -1,0 +1,43 @@
+{
+  "name": "fire",
+  "version": "1.0.0",
+  "description": "Fire theme with warm red, orange, and yellow colors",
+  "author": "aahook",
+  "colors": {
+    "mode": "character",
+    "rules": [
+      {
+        "match": "@",
+        "color": { "fg": "#FF0000", "style": ["bold"] }
+      },
+      {
+        "match": "#",
+        "color": { "fg": "#FF4500", "style": ["bold"] }
+      },
+      {
+        "match": "*",
+        "color": { "fg": "#FFA500" }
+      },
+      {
+        "match": "+",
+        "color": { "fg": "#FFD700" }
+      },
+      {
+        "match": "=",
+        "color": { "fg": "#FFFF00" }
+      },
+      {
+        "match": "-",
+        "color": { "fg": "#FFA07A" }
+      },
+      {
+        "match": ".",
+        "color": { "fg": "#8B0000" }
+      },
+      {
+        "match": ":",
+        "color": { "fg": "#DC143C" }
+      }
+    ]
+  }
+}

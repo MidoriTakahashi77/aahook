@@ -1,0 +1,35 @@
+{
+  "name": "retro",
+  "version": "1.0.0",
+  "description": "Retro terminal theme with classic green phosphor look",
+  "author": "aahook",
+  "colors": {
+    "mode": "pattern",
+    "rules": [
+      {
+        "match": "[A-Za-z0-9]",
+        "color": { "fg": "#00FF00", "bg": "#000000" }
+      },
+      {
+        "match": "[!@#$%^&*()_+={}\\[\\]:;\"'<>,.?/|\\\\-]",
+        "color": { "fg": "#00CC00", "bg": "#000000", "style": ["dim"] }
+      },
+      {
+        "match": "█",
+        "color": { "fg": "#00FF00", "bg": "#003300", "style": ["bold"] }
+      },
+      {
+        "match": "▓",
+        "color": { "fg": "#00DD00", "bg": "#002200" }
+      },
+      {
+        "match": "▒",
+        "color": { "fg": "#00BB00", "bg": "#001100" }
+      },
+      {
+        "match": "░",
+        "color": { "fg": "#009900", "bg": "#000000" }
+      }
+    ]
+  }
+}

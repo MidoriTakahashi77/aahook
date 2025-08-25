@@ -1,0 +1,35 @@
+{
+  "name": "neon",
+  "version": "1.0.0",
+  "description": "Neon lights theme with bright colors on dark background",
+  "author": "aahook",
+  "colors": {
+    "mode": "pattern",
+    "rules": [
+      {
+        "match": "[A-Z]",
+        "color": { "fg": "#00FFFF", "style": ["bold"] }
+      },
+      {
+        "match": "[a-z]",
+        "color": { "fg": "#FF00FF" }
+      },
+      {
+        "match": "[0-9]",
+        "color": { "fg": "#FFFF00", "style": ["bold"] }
+      },
+      {
+        "match": "[!@#$%^&*()]",
+        "color": { "fg": "#00FF00", "style": ["bold"] }
+      },
+      {
+        "match": "[/\\\\|_-]",
+        "color": { "fg": "#FF1493" }
+      },
+      {
+        "match": "[<>]",
+        "color": { "fg": "#FF4500", "style": ["bold"] }
+      }
+    ]
+  }
+}

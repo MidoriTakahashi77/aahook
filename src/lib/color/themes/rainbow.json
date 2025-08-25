@@ -1,0 +1,43 @@
+{
+  "name": "rainbow",
+  "version": "1.0.0",
+  "description": "Rainbow gradient theme - each line gets a different color",
+  "author": "aahook",
+  "colors": {
+    "mode": "line",
+    "rules": [
+      {
+        "match": { "start": 0, "end": 0 },
+        "color": { "fg": "#FF0000", "style": ["bold"] }
+      },
+      {
+        "match": { "start": 1, "end": 1 },
+        "color": { "fg": "#FF7F00", "style": ["bold"] }
+      },
+      {
+        "match": { "start": 2, "end": 2 },
+        "color": { "fg": "#FFFF00", "style": ["bold"] }
+      },
+      {
+        "match": { "start": 3, "end": 3 },
+        "color": { "fg": "#00FF00", "style": ["bold"] }
+      },
+      {
+        "match": { "start": 4, "end": 4 },
+        "color": { "fg": "#0000FF", "style": ["bold"] }
+      },
+      {
+        "match": { "start": 5, "end": 5 },
+        "color": { "fg": "#4B0082", "style": ["bold"] }
+      },
+      {
+        "match": { "start": 6, "end": 6 },
+        "color": { "fg": "#9400D3", "style": ["bold"] }
+      },
+      {
+        "match": { "start": 7, "end": 99 },
+        "color": { "fg": "#FF00FF", "style": ["bold"] }
+      }
+    ]
+  }
+}
