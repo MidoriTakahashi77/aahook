@@ -11,6 +11,7 @@
     "dev": "tsc --watch",
     "test": "node test/test.spec.js",
     "test:bun": "bun test",
+    "generate-index": "ts-node scripts/generate-index.ts",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {

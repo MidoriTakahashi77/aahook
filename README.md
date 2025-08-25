@@ -1,5 +1,9 @@
 # 🎯 aahook
 
+![npm](https://img.shields.io/npm/dw/aahook)   <!-- 週ごとのDL数 -->
+![npm](https://img.shields.io/npm/dm/aahook)   <!-- 月ごとのDL数 -->
+![npm](https://img.shields.io/npm/dt/aahook)   <!-- 累計DL数 -->
+
 Display ASCII art when your commands succeed or fail! Make your terminal more fun and expressive.
 
 ```bash
@@ -221,3 +225,4 @@ If you find this tool useful, please consider giving it a star on GitHub!
 ---
 
 Made with ❤️ for developers who love fun terminals
+
