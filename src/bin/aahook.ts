@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import * as fs from 'fs';
 import * as path from 'path';
 import { runWithHook } from '../lib/execute';
@@ -35,7 +33,23 @@ For more information, visit: https://github.com/MidoriTakahashi77/aahook
 }
 
 function showVersion(): void {
-  console.log(`aahook v${getVersion()}`);
+  const version = getVersion();
+  console.log(`
+╔═══════════════════════════════════════════════════════╗
+║                                                       ║
+║     @@@@@@    @@@@@@   @@   @@   @@@@@@   @@@@@@     ║
+║    @@    @@  @@    @@  @@   @@  @@    @@  @@    @@   ║
+║    @@@@@@@@  @@@@@@@@  @@@@@@@  @@    @@  @@    @@   ║
+║    @@    @@  @@    @@  @@   @@  @@    @@  @@    @@   ║
+║    @@    @@  @@    @@  @@   @@   @@@@@@   @@@@@@     ║
+║                                                       ║
+║    🎯 ASCII Art Hook for Your Commands! 🎯           ║
+║                                                       ║
+║    Version: ${version.padEnd(42)}║
+║    Ready to make your terminal fun! ✨               ║
+║                                                       ║
+╚═══════════════════════════════════════════════════════╝
+  `);
 }
 
 function main(): void {

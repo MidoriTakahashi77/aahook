@@ -2,6 +2,12 @@
 
 Display ASCII art when your commands succeed or fail! Make your terminal more fun and expressive.
 
+```bash
+# Install-free usage with npx or bunx
+npx aahook git push    # Shows dragon art on success 🐲
+bunx aahook npm test   # Shows success/error art based on result ✨
+```
+
 ## ✨ Features
 
 - 🎨 Show custom ASCII art based on command success/failure
@@ -12,22 +18,54 @@ Display ASCII art when your commands succeed or fail! Make your terminal more fu
 
 ## 📦 Installation
 
+### 🚀 No Installation Required (Recommended)
+```bash
+# Using npx (comes with Node.js)
+npx aahook <command>
+
+# Using bunx (faster, comes with Bun)
+bunx aahook <command>
+```
+
+### Optional: Global Installation
+<details>
+<summary>If you prefer to install globally...</summary>
+
+#### Using npm
 ```bash
 npm install -g aahook
 ```
+
+#### Using Bun
+```bash
+bun add -g aahook
+
+# Add to PATH (first time only)
+echo 'export PATH="$HOME/.bun/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+</details>
 
 ## 🚀 Quick Start
 
 1. **Initialize aahook:**
 ```bash
-aahook init
+npx aahook init
+# or
+bunx aahook init
 ```
 
 2. **Run commands with ASCII art:**
 ```bash
-aahook ls        # Shows cat art on success
-aahook git push  # Shows dragon art on success
-aahook npm test  # Shows success/error art based on result
+# Using npx
+npx aahook ls        # Shows cat art on success 🐱
+npx aahook git push  # Shows dragon art on success 🐲
+npx aahook npm test  # Shows success/error art ✨/💥
+
+# Using bunx (faster)
+bunx aahook ls
+bunx aahook git push
+bunx aahook npm test
 ```
 
 ## 📝 Usage
@@ -35,24 +73,28 @@ aahook npm test  # Shows success/error art based on result
 ### Basic Commands
 
 ```bash
-aahook <command>     # Execute command and show ASCII art
-aahook init          # Initialize aahook configuration
-aahook list          # List configured hooks
-aahook --help        # Show help message
-aahook --version     # Show version
+npx aahook <command>     # Execute command and show ASCII art
+npx aahook init          # Initialize aahook configuration
+npx aahook list          # List configured hooks
+npx aahook --help        # Show help message
+npx aahook --version     # Show version
 ```
 
-### Examples
+### Real-world Examples
 
 ```bash
-# Simple command execution
-aahook ls
+# Development workflow
+npx aahook npm test          # Run tests with visual feedback
+bunx aahook npm run build    # Build with success animation
+npx aahook git push          # Push code with dragon celebration
 
-# Git operations with custom art
-aahook git push origin main
+# File operations
+bunx aahook ls -la           # List files with cat art
+npx aahook rm temp.txt       # Delete with feedback
 
-# NPM scripts
-aahook npm run build
+# Quick aliases (add to .zshrc/.bashrc)
+alias aa="npx aahook"        # Now use: aa npm test
+alias aab="bunx aahook"      # Now use: aab git push
 ```
 
 ## ⚙️ Configuration
@@ -140,17 +182,22 @@ Configuration is stored in `~/.aahook/config.json`:
 git clone https://github.com/MidoriTakahashi77/aahook.git
 cd aahook
 
-# Install dependencies
+# Install dependencies (choose one)
 npm install
+bun install
 
 # Build TypeScript
 npm run build
+bun run build
 
 # Run tests
 npm test
+bun test
 
-# Link for local development
-npm link
+# Test locally without publishing
+npm link          # Then use: aahook <command>
+# or test directly
+node bin/aahook.js --version
 ```
 
 ## 🤝 Contributing
