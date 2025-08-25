@@ -1,0 +1,35 @@
+{
+  "name": "sunset",
+  "version": "1.0.0",
+  "description": "Warm sunset gradient from red to purple",
+  "author": "aahook",
+  "colors": {
+    "mode": "line",
+    "rules": [
+      {
+        "match": { "start": 0, "end": 0 },
+        "color": { "fg": "#FF6B6B", "style": ["bold"] }
+      },
+      {
+        "match": { "start": 1, "end": 1 },
+        "color": { "fg": "#FF8E53" }
+      },
+      {
+        "match": { "start": 2, "end": 2 },
+        "color": { "fg": "#FE6B8B" }
+      },
+      {
+        "match": { "start": 3, "end": 3 },
+        "color": { "fg": "#C56CC7" }
+      },
+      {
+        "match": { "start": 4, "end": 4 },
+        "color": { "fg": "#8E44AD" }
+      },
+      {
+        "match": { "start": 5, "end": 99 },
+        "color": { "fg": "#6C5CE7" }
+      }
+    ]
+  }
+}

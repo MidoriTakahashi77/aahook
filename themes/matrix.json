@@ -1,0 +1,39 @@
+{
+  "name": "matrix",
+  "version": "1.0.0",
+  "description": "Matrix-style green digital rain",
+  "author": "aahook",
+  "colors": {
+    "mode": "pattern",
+    "rules": [
+      {
+        "match": "[0-9]",
+        "color": { "fg": "#00FF00", "style": ["bold"] }
+      },
+      {
+        "match": "[A-Z]",
+        "color": { "fg": "#00FF00", "style": ["bold"] }
+      },
+      {
+        "match": "[a-z]",
+        "color": { "fg": "#00CC00" }
+      },
+      {
+        "match": "[!@#$%^&*()]",
+        "color": { "fg": "#00FF00", "bg": "#001100", "style": ["bold"] }
+      },
+      {
+        "match": "[|/\\\\\\-]",
+        "color": { "fg": "#008800", "style": ["dim"] }
+      },
+      {
+        "match": "[<>{}\\[\\]]",
+        "color": { "fg": "#00AA00" }
+      },
+      {
+        "match": "[_=+]",
+        "color": { "fg": "#00DD00" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "cyberpunk",
+  "version": "1.0.0",
+  "description": "Neon colors on dark background - cyberpunk aesthetic",
+  "author": "aahook",
+  "colors": {
+    "mode": "character",
+    "rules": [
+      {
+        "match": "@",
+        "color": { "fg": "#FF00FF", "style": ["bold"] }
+      },
+      {
+        "match": "#",
+        "color": { "fg": "#00FFFF", "style": ["bold"] }
+      },
+      {
+        "match": "$",
+        "color": { "fg": "#FFFF00", "style": ["bold"] }
+      },
+      {
+        "match": "%",
+        "color": { "fg": "#FF00FF" }
+      },
+      {
+        "match": "*",
+        "color": { "fg": "#00FFFF", "style": ["blink"] }
+      },
+      {
+        "match": "+",
+        "color": { "fg": "#FF1493" }
+      },
+      {
+        "match": "=",
+        "color": { "fg": "#00CED1" }
+      },
+      {
+        "match": "-",
+        "color": { "fg": "#FF69B4" }
+      },
+      {
+        "match": "_",
+        "color": { "fg": "#9370DB" }
+      },
+      {
+        "match": "|",
+        "color": { "fg": "#FF1493", "style": ["bold"] }
+      },
+      {
+        "match": "/",
+        "color": { "fg": "#FF69B4" }
+      },
+      {
+        "match": "\\",
+        "color": { "fg": "#FF69B4" }
+      },
+      {
+        "match": ".",
+        "color": { "fg": "#4B0082", "style": ["dim"] }
+      },
+      {
+        "match": ":",
+        "color": { "fg": "#8A2BE2" }
+      }
+    ]
+  }
+}

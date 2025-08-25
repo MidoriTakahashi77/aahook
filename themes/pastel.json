@@ -1,0 +1,35 @@
+{
+  "name": "pastel",
+  "version": "1.0.0",
+  "description": "Soft pastel colors for a gentle look",
+  "author": "aahook",
+  "colors": {
+    "mode": "line",
+    "rules": [
+      {
+        "match": { "start": 0, "end": 0 },
+        "color": { "fg": "#FFB3BA" }
+      },
+      {
+        "match": { "start": 1, "end": 1 },
+        "color": { "fg": "#FFDFBA" }
+      },
+      {
+        "match": { "start": 2, "end": 2 },
+        "color": { "fg": "#FFFFBA" }
+      },
+      {
+        "match": { "start": 3, "end": 3 },
+        "color": { "fg": "#BAFFC9" }
+      },
+      {
+        "match": { "start": 4, "end": 4 },
+        "color": { "fg": "#BAE1FF" }
+      },
+      {
+        "match": { "start": 5, "end": 99 },
+        "color": { "fg": "#E0BBE4" }
+      }
+    ]
+  }
+}
