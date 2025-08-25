@@ -15,10 +15,13 @@ bunx aahook npm test   # Shows success/error art based on result ✨
 ## ✨ Features
 
 - 🎨 Show custom ASCII art based on command success/failure
+- 📥 Browse and install ASCII arts from community repository
+- 🌐 GitHub-based art sharing - contribute via Pull Requests
 - ⚡ Zero dependencies, lightweight and fast
 - 🔧 Easy configuration with JSON
 - 📦 Simple npm installation
 - 🌈 Customizable art files
+- 🔍 Preview arts before installation
 
 ## 📦 Installation
 
@@ -84,6 +87,27 @@ npx aahook --help        # Show help message
 npx aahook --version     # Show version
 ```
 
+### ASCII Art Management
+
+```bash
+# Browse available arts in the repository
+npx aahook browse
+
+# Preview an art before installing
+npx aahook preview animals/cat --remote
+
+# Install an art from the repository
+npx aahook install animals/cat
+npx aahook install celebrations/party --auto-config
+
+# View your installed arts
+npx aahook gallery
+npx aahook gallery --category animals --limit 5
+
+# Preview installed art
+npx aahook preview cat
+```
+
 ### Real-world Examples
 
 ```bash
@@ -124,9 +148,24 @@ Configuration is stored in `~/.aahook/config.json`:
 }
 ```
 
-## 🎨 Default ASCII Arts
+## 🎨 Available ASCII Arts
 
-### Success (cat.txt)
+### Browse All Available Arts
+
+```bash
+npx aahook browse  # See all available arts in repository
+```
+
+### Categories
+
+- 🐾 **Animals**: cat, dog, and more
+- 🎉 **Celebrations**: success, party themes
+- 💻 **Developer**: dragon, deploy, coding themes
+- 😊 **Emotions**: happy, surprised, error expressions
+
+### Example Arts
+
+#### Cat (animals/cat)
 ```
 🐱 Done! 🐱
    /\_/\  
@@ -134,15 +173,7 @@ Configuration is stored in `~/.aahook/config.json`:
    > ^ <
 ```
 
-### Error (error.txt)
-```
-💥 Oops! 💥
-    (╯°□°）╯
-   Something went wrong...
-   Check the error above ↑
-```
-
-### Git Push Success (dragon.txt)
+#### Dragon (developer/dragon)
 ```
 🐲 Push successful! 🐲
      /|   /|  
@@ -151,7 +182,29 @@ Configuration is stored in `~/.aahook/config.json`:
   Your code flies to the repo!
 ```
 
+#### Party (celebrations/party)
+```
+🎉 Let's celebrate! 🎉
+     \o/
+      |
+     / \
+   *confetti*
+```
+
 ## 🎯 Custom Art
+
+### Method 1: Install from Repository
+
+```bash
+# Browse available arts
+npx aahook browse
+
+# Install specific art
+npx aahook install animals/cat
+npx aahook install developer/deploy --auto-config
+```
+
+### Method 2: Create Your Own
 
 1. Create your ASCII art file in `~/.aahook/arts/`
 2. Update `~/.aahook/config.json` to use your art:
@@ -166,6 +219,13 @@ Configuration is stored in `~/.aahook/config.json`:
   }
 }
 ```
+
+### Method 3: Contribute to Repository
+
+1. Fork the [aahook repository](https://github.com/MidoriTakahashi77/aahook)
+2. Add your art to `arts/<category>/<name>.txt`
+3. Update `arts/<category>/META.json` with art metadata
+4. Submit a Pull Request to share with the community!
 
 ## 📁 File Structure
 
