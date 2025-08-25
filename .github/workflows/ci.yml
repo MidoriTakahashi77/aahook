@@ -1,0 +1,89 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x, 20.x]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        
+    - name: Install dependencies
+      run: |
+        npm install
+        npm install -D ts-node @types/node typescript
+        
+    - name: Build TypeScript
+      run: npm run build
+      
+    - name: Run tests
+      run: npm test
+      
+    - name: Validate ASCII arts
+      run: npm run validate-arts
+      
+    - name: Check for security issues
+      run: |
+        # Check for high-risk patterns in source code
+        echo "Checking for potential security issues..."
+        
+        # Check for eval() usage
+        if grep -r "eval(" src/ --include="*.ts" --include="*.js"; then
+          echo "❌ Found eval() usage - this is a security risk"
+          exit 1
+        fi
+        
+        # Check for Function constructor
+        if grep -r "new Function(" src/ --include="*.ts" --include="*.js"; then
+          echo "❌ Found Function constructor usage - this is a security risk"
+          exit 1
+        fi
+        
+        echo "✅ No security issues found"
+
+  validate-arts:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: |
+        npm install
+        npm install -D ts-node @types/node typescript
+        
+    - name: Validate all ASCII arts
+      run: npm run validate-arts
+      
+    - name: Generate index
+      run: npm run generate-index
+      
+    - name: Check index is up to date
+      run: |
+        if git diff --exit-code arts/index.json; then
+          echo "✅ Index is up to date"
+        else
+          echo "❌ Index is out of date. Run 'npm run generate-index' and commit the changes."
+          exit 1
+        fi

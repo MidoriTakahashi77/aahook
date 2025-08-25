@@ -1,0 +1,56 @@
+name: Validate ASCII Arts
+
+on:
+  push:
+    paths:
+      - 'arts/**/*.txt'
+      - 'scripts/validate-arts.ts'
+  pull_request:
+    paths:
+      - 'arts/**/*.txt'
+      - 'scripts/validate-arts.ts'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: |
+        npm install
+        npm install -D ts-node @types/node typescript
+        
+    - name: Validate ASCII arts
+      run: npm run validate-arts
+      
+    - name: Comment PR on failure
+      if: failure() && github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: '❌ ASCII art validation failed! Please check the validation errors in the CI logs.\n\nCommon issues:\n- Control characters or escape sequences\n- File too large (max 10KB)\n- Suspicious URLs\n- Shell command patterns\n\nRun `npm run validate-arts` locally to see detailed errors.'
+          })
+          
+    - name: Comment PR on success
+      if: success() && github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: '✅ ASCII art validation passed! Your art files are safe and ready to merge.'
+          })
