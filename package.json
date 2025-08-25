@@ -1,6 +1,6 @@
 {
   "name": "aahook",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A CLI tool that displays ASCII art when commands succeed or fail",
   "main": "dist/lib/index.js",
   "bin": {

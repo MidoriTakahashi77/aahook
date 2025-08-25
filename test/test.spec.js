@@ -102,7 +102,7 @@ function runTests() {
   test('aahook --version should show version', () => {
     const result = runAahook('--version');
     assert(result.exitCode === 0, 'Exit code should be 0');
-    assert(result.stdout.includes('0.2.0'), 'Should show version 0.2.0');
+    assert(result.stdout.includes('0.3.0'), 'Should show version 0.3.0');
   });
   
   // Test 2: Help command
@@ -221,6 +221,25 @@ function runTests() {
     assert(result.stdout.includes('browse'), 'Should show browse command');
     assert(result.stdout.includes('install'), 'Should show install command');
     assert(result.stdout.includes('preview'), 'Should show preview command');
+    assert(result.stdout.includes('colorize'), 'Should show colorize command');
+  });
+  
+  // Test 11.1: Colorize command
+  test('aahook colorize --list-themes should list themes', () => {
+    const result = runAahook('colorize --list-themes');
+    assert(result.exitCode === 0, 'Exit code should be 0');
+    assert(result.stdout.includes('Available Color Themes'), 'Should show theme list');
+    assert(result.stdout.includes('rainbow'), 'Should include rainbow theme');
+    assert(result.stdout.includes('neon'), 'Should include neon theme');
+  });
+  
+  // Test 11.2: Colorize without art name
+  test('aahook colorize should require art name', () => {
+    const result = runAahook('colorize');
+    assert(result.exitCode !== 0, 'Exit code should not be 0');
+    assert(result.stdout.includes('specify an art') || 
+           result.stderr.includes('specify an art'), 
+           'Should show error message');
   });
   
   // Test 12: Hook matching with arguments
