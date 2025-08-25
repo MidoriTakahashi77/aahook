@@ -102,9 +102,25 @@ export function findHook(config: Config, command: string): HookConfig | null {
     return null;
   }
   
-  // Exact match only
+  // First, try exact match
   if (config.hooks[command]) {
     return config.hooks[command];
+  }
+  
+  // Then, try prefix match (for commands with arguments)
+  for (const [pattern, hook] of Object.entries(config.hooks)) {
+    // Skip wildcard for now
+    if (pattern === '*') continue;
+    
+    // Check if command starts with the pattern
+    if (command.startsWith(pattern + ' ') || command === pattern) {
+      return hook;
+    }
+  }
+  
+  // Finally, check for wildcard
+  if (config.hooks['*']) {
+    return config.hooks['*'];
   }
   
   return null;
