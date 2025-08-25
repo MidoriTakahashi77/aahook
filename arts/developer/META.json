@@ -1,0 +1,27 @@
+{
+  "name": "developer",
+  "displayName": "Developer 💻",
+  "description": "Developer-specific ASCII arts",
+  "arts": [
+    {
+      "name": "dragon",
+      "displayName": "Dragon",
+      "description": "Dragon for git push success",
+      "author": "original",
+      "tags": ["developer", "git", "push", "dragon"],
+      "suggestedHooks": {
+        "success": ["git push"]
+      }
+    },
+    {
+      "name": "deploy",
+      "displayName": "Deploy Rocket",
+      "description": "Rocket launching for deployment",
+      "author": "aahook-community",
+      "tags": ["developer", "deploy", "rocket", "production"],
+      "suggestedHooks": {
+        "success": ["npm run deploy", "deploy", "git push origin main"]
+      }
+    }
+  ]
+}

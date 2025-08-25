@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "updated": "2025-08-25T04:00:45.490Z",
+  "categories": [
+    {
+      "name": "animals",
+      "displayName": "Animals 🐾",
+      "count": 2
+    },
+    {
+      "name": "celebrations",
+      "displayName": "Celebrations 🎉",
+      "count": 2
+    },
+    {
+      "name": "developer",
+      "displayName": "Developer 💻",
+      "count": 2
+    },
+    {
+      "name": "emotions",
+      "displayName": "Emotions 😊",
+      "count": 3
+    }
+  ],
+  "total": 9
+}

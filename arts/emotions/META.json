@@ -1,0 +1,37 @@
+{
+  "name": "emotions",
+  "displayName": "Emotions 😊",
+  "description": "Emotional expression ASCII arts",
+  "arts": [
+    {
+      "name": "error",
+      "displayName": "Error",
+      "description": "Oops something went wrong",
+      "author": "original",
+      "tags": ["emotion", "error", "fail"],
+      "suggestedHooks": {
+        "error": ["npm test", "npm run build", "git push"]
+      }
+    },
+    {
+      "name": "happy",
+      "displayName": "Happy",
+      "description": "Happy face with sparkles",
+      "author": "aahook-community",
+      "tags": ["emotion", "happy", "success", "joy"],
+      "suggestedHooks": {
+        "success": ["git commit", "npm install"]
+      }
+    },
+    {
+      "name": "surprised",
+      "displayName": "Surprised",
+      "description": "Wow what a surprise",
+      "author": "aahook-community",
+      "tags": ["emotion", "surprise", "wow"],
+      "suggestedHooks": {
+        "success": ["npm audit", "git status"]
+      }
+    }
+  ]
+}

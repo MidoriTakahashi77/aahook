@@ -1,0 +1,27 @@
+{
+  "name": "celebrations",
+  "displayName": "Celebrations 🎉",
+  "description": "Celebration and success ASCII arts",
+  "arts": [
+    {
+      "name": "success",
+      "displayName": "Success",
+      "description": "General success celebration",
+      "author": "original",
+      "tags": ["celebration", "success", "general"],
+      "suggestedHooks": {
+        "success": ["npm test", "npm run build"]
+      }
+    },
+    {
+      "name": "party",
+      "displayName": "Party",
+      "description": "Party time celebration",
+      "author": "aahook-community",
+      "tags": ["celebration", "party", "fun"],
+      "suggestedHooks": {
+        "success": ["npm publish", "git tag"]
+      }
+    }
+  ]
+}

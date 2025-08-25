@@ -1,0 +1,27 @@
+{
+  "name": "animals",
+  "displayName": "Animals 🐾",
+  "description": "Cute animal ASCII arts",
+  "arts": [
+    {
+      "name": "cat",
+      "displayName": "Cat",
+      "description": "Cute cat saying done",
+      "author": "original",
+      "tags": ["animal", "cute", "success"],
+      "suggestedHooks": {
+        "success": ["ls", "cat"]
+      }
+    },
+    {
+      "name": "dog",
+      "displayName": "Dog",
+      "description": "Happy dog ready to code",
+      "author": "aahook-community",
+      "tags": ["animal", "cute", "motivation"],
+      "suggestedHooks": {
+        "success": ["fetch", "git fetch"]
+      }
+    }
+  ]
+}
