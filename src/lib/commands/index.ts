@@ -5,3 +5,4 @@ export { galleryCommand } from './gallery';
 export { installCommand } from './install';
 export { previewCommand } from './preview';
 export { browseCommand } from './browse';
+export { colorizeCommand, createThemeCommand } from './colorize';

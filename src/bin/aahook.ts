@@ -7,7 +7,8 @@ import {
   galleryCommand, 
   installCommand, 
   previewCommand, 
-  browseCommand 
+  browseCommand,
+  colorizeCommand
 } from '../lib/commands';
 
 function getVersion(): string {
@@ -45,6 +46,9 @@ ASCII Art Commands:
 
   aahook preview <name> [--remote]
     Preview ASCII art (local by default, --remote for repository)
+
+  aahook colorize <name> [--theme <theme>] [--save]
+    Apply color theme to ASCII art
 
 Examples:
   aahook init                    # Initialize ~/.aahook with default configuration
@@ -161,6 +165,21 @@ async function main(): Promise<void> {
         }
         await previewCommand(params[0], {
           remote: options.remote || false
+        });
+        break;
+        
+      case 'colorize':
+        if (params.length === 0 && !options['list-themes']) {
+          console.error('Error: Please specify an art to colorize');
+          process.exit(1);
+        }
+        await colorizeCommand(params[0], {
+          theme: options.theme,
+          custom: options.custom,
+          save: options.save || false,
+          preview: options.preview || false,
+          listThemes: options['list-themes'] || false,
+          output: options.output
         });
         break;
         
