@@ -5,7 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.0] - 2024-12-XX (Unreleased)
+## [0.3.0] - 2024-12-25
+
+### Added
+- 🌈 **Color Theme System**: Apply beautiful colors to ASCII arts
+  - 5 built-in themes: rainbow, neon, ocean, fire, retro
+  - Support for ANSI color codes (16, 256, and true color)
+  - 4 coloring modes: line, pattern, character, region
+  - Custom theme support via JSON files
+- 🎨 `colorize` command: Apply and save colored ASCII arts
+- 🎯 Color helper utilities for ANSI escape sequences
+- 📝 Theme file format for creating custom themes
+- 📚 Comprehensive theme creation guide (docs/CREATE_THEME.md)
+- 🎭 4 example custom themes: sunset, matrix, pastel, cyberpunk
+
+### Changed
+- Updated help documentation to include colorize command
+- Enhanced test suite with color feature tests
+
+### Fixed
+- Pattern and character mode regex matching for themes
+
+## [0.2.0] - 2024-12-25
 
 ### Added
 - 🎨 **ASCII Art Management System**: Browse, install, preview, and manage ASCII arts from GitHub repository

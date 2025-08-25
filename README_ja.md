@@ -15,12 +15,13 @@ bunx aahook npm test   # 結果に応じて成功/エラーアートを表示 �
 ## ✨ 機能
 
 - 🎨 コマンドの成功/失敗に応じてカスタムASCIIアートを表示
+- 🌈 **新機能: カラーテーマ** - ASCIIアートに美しい色を適用
 - 📥 コミュニティリポジトリからASCIIアートをブラウズ・インストール
 - 🌐 GitHub経由でのアート共有 - Pull Requestで貢献
 - ⚡ 依存関係ゼロ、軽量で高速
 - 🔧 JSONによる簡単な設定
 - 📦 シンプルなnpmインストール
-- 🌈 カスタマイズ可能なアートファイル
+- 🎯 カスタマイズ可能なアートファイル
 - 🔍 インストール前のアートプレビュー
 
 ## 📦 インストール
@@ -107,6 +108,63 @@ npx aahook gallery --category animals --limit 5
 # インストール済みアートをプレビュー
 npx aahook preview cat
 ```
+
+### 🌈 カラーテーマ（新機能！）
+
+```bash
+# 利用可能なカラーテーマを一覧表示
+npx aahook colorize --list-themes
+
+# ASCIIアートにカラーテーマを適用
+npx aahook colorize cat --theme rainbow
+npx aahook colorize dragon --theme neon
+npx aahook colorize party --theme fire
+
+# カラー版を保存
+npx aahook colorize cat --theme ocean --save
+
+# カスタムテーマを使用
+npx aahook colorize cat --custom ./my-theme.json
+
+# 利用可能な組み込みテーマ:
+# - rainbow: 各行にカラフルなグラデーション
+# - neon: 明るいサイバーパンクカラー
+# - ocean: クールな青色トーン
+# - fire: 暖かい赤とオレンジ
+# - retro: クラシックな緑色ターミナル
+```
+
+#### カスタムテーマの作成
+
+独自のカラーテーマを作成できます！詳細は[テーマ作成ガイド](docs/CREATE_THEME.md)（英語）をご覧ください。
+
+簡単な例 - `~/.aahook/themes/my-theme.json`を作成:
+```json
+{
+  "name": "my-theme",
+  "version": "1.0.0",
+  "colors": {
+    "mode": "line",
+    "rules": [
+      {
+        "match": { "start": 0, "end": 0 },
+        "color": { "fg": "#FF6B6B" }
+      }
+    ]
+  }
+}
+```
+
+使用方法:
+```bash
+npx aahook colorize cat --theme my-theme
+```
+
+**カラーモード**:
+- `line`: 行単位で色付け（グラデーション向き）
+- `pattern`: パターンマッチで色付け（正規表現対応）
+- `character`: 特定文字を色付け
+- `region`: 領域指定で色付け
 
 ### 実用例
 

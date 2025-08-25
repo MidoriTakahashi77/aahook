@@ -15,12 +15,13 @@ bunx aahook npm test   # Shows success/error art based on result ✨
 ## ✨ Features
 
 - 🎨 Show custom ASCII art based on command success/failure
+- 🌈 **NEW: Color themes** - Apply beautiful colors to your ASCII arts
 - 📥 Browse and install ASCII arts from community repository
 - 🌐 GitHub-based art sharing - contribute via Pull Requests
 - ⚡ Zero dependencies, lightweight and fast
 - 🔧 Easy configuration with JSON
 - 📦 Simple npm installation
-- 🌈 Customizable art files
+- 🎯 Customizable art files
 - 🔍 Preview arts before installation
 
 ## 📦 Installation
@@ -106,6 +107,57 @@ npx aahook gallery --category animals --limit 5
 
 # Preview installed art
 npx aahook preview cat
+```
+
+### 🌈 Color Themes (NEW!)
+
+```bash
+# List available color themes
+npx aahook colorize --list-themes
+
+# Apply a color theme to an ASCII art
+npx aahook colorize cat --theme rainbow
+npx aahook colorize dragon --theme neon
+npx aahook colorize party --theme fire
+
+# Save the colored version
+npx aahook colorize cat --theme ocean --save
+
+# Use custom theme
+npx aahook colorize cat --custom ./my-theme.json
+
+# Available built-in themes:
+# - rainbow: Colorful gradient for each line
+# - neon: Bright cyberpunk colors
+# - ocean: Cool blue tones
+# - fire: Warm red and orange
+# - retro: Classic green terminal
+```
+
+#### Creating Custom Themes
+
+Create your own color themes! See [Theme Creation Guide](docs/CREATE_THEME.md) for details.
+
+Quick example - create `~/.aahook/themes/my-theme.json`:
+```json
+{
+  "name": "my-theme",
+  "version": "1.0.0",
+  "colors": {
+    "mode": "line",
+    "rules": [
+      {
+        "match": { "start": 0, "end": 0 },
+        "color": { "fg": "#FF6B6B" }
+      }
+    ]
+  }
+}
+```
+
+Then use it:
+```bash
+npx aahook colorize cat --theme my-theme
 ```
 
 ### Real-world Examples
