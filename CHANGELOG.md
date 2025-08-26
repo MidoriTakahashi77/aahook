@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2024-12-25
+
+### Added
+- 🎬 **Animation System**: Bring ASCII arts to life with smooth animations
+  - 5 animation types: typing, fade, slide, frames, blink
+  - Smooth, flicker-free rendering with terminal optimization
+  - Direction control for fade and slide animations
+  - Speed control with customizable delays
+  - Integration with color themes for animated colored arts
+- 📦 `animate` command: Apply animations to ASCII arts
+- ⚡ Performance optimizations for smooth animations
+- 🎮 Interrupt handling (Ctrl+C) during animations
+- 💾 Animation settings persistence
+
+### Changed
+- Improved terminal rendering with better cursor control
+- Enhanced animation performance with optimized frame rates
+- Better fallback for non-interactive terminals
+
+### Fixed
+- Terminal output preservation after animations
+- Smooth slide animations without screen artifacts
+- Character-by-character fade animations
+
 ## [0.3.0] - 2024-12-25
 
 ### Added

@@ -160,6 +160,38 @@ Then use it:
 npx aahook colorize cat --theme my-theme
 ```
 
+### 🎬 Animations (NEW!)
+
+```bash
+# Animate ASCII art with various effects
+npx aahook animate cat --type typing --speed 50
+npx aahook animate dragon --type fade --direction top
+npx aahook animate success --type slide --direction left
+
+# Animation types:
+# - typing: Display characters one by one
+# - fade: Fade in lines or characters gradually
+# - slide: Slide art from specified direction
+# - frames: Animate through multiple frames
+# - blink: Make art or parts of it blink
+
+# Combine with color themes
+npx aahook animate cat --type typing --theme rainbow
+
+# Control animation speed
+npx aahook animate cat --type typing --speed 100  # Faster
+npx aahook animate cat --type typing --speed 20   # Slower
+
+# Fade directions
+npx aahook animate dragon --type fade --direction top    # Top to bottom
+npx aahook animate dragon --type fade --direction bottom # Bottom to top
+npx aahook animate dragon --type fade --direction left   # Left to right (character by character)
+npx aahook animate dragon --type fade --direction right  # Right to left
+
+# Save animation settings
+npx aahook animate cat --type typing --save
+```
+
 ### Real-world Examples
 
 ```bash

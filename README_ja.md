@@ -166,6 +166,38 @@ npx aahook colorize cat --theme my-theme
 - `character`: 特定文字を色付け
 - `region`: 領域指定で色付け
 
+### 🎬 アニメーション機能（新機能！）
+
+```bash
+# 様々なエフェクトでASCIIアートをアニメーション化
+npx aahook animate cat --type typing --speed 50
+npx aahook animate dragon --type fade --direction top
+npx aahook animate success --type slide --direction left
+
+# アニメーションタイプ:
+# - typing: 1文字ずつ表示
+# - fade: 行または文字を徐々にフェードイン
+# - slide: 指定方向からスライド
+# - frames: 複数フレームをアニメーション
+# - blink: アートまたは一部を点滅
+
+# カラーテーマと組み合わせ
+npx aahook animate cat --type typing --theme rainbow
+
+# アニメーション速度の制御
+npx aahook animate cat --type typing --speed 100  # 速い
+npx aahook animate cat --type typing --speed 20   # 遅い
+
+# フェード方向
+npx aahook animate dragon --type fade --direction top    # 上から下へ
+npx aahook animate dragon --type fade --direction bottom # 下から上へ
+npx aahook animate dragon --type fade --direction left   # 左から右へ（文字単位）
+npx aahook animate dragon --type fade --direction right  # 右から左へ
+
+# アニメーション設定を保存
+npx aahook animate cat --type typing --save
+```
+
 ### 実用例
 
 ```bash
