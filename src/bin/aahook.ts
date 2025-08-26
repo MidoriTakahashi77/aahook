@@ -8,7 +8,9 @@ import {
   installCommand, 
   previewCommand, 
   browseCommand,
-  colorizeCommand
+  colorizeCommand,
+  animateCommand,
+  listAnimations
 } from '../lib/commands';
 
 function getVersion(): string {
@@ -49,6 +51,9 @@ ASCII Art Commands:
 
   aahook colorize <name> [--theme <theme>] [--save]
     Apply color theme to ASCII art
+
+  aahook animate <name> [--type <type>] [--speed <n>] [--loop <n>]
+    Animate ASCII art with various effects
 
 Examples:
   aahook init                    # Initialize ~/.aahook with default configuration
@@ -181,6 +186,27 @@ async function main(): Promise<void> {
           listThemes: options['list-themes'] || false,
           output: options.output
         });
+        break;
+        
+      case 'animate':
+        if (params.length === 0 && !options.list) {
+          console.error('Error: Please specify an art to animate');
+          process.exit(1);
+        }
+        if (options.list) {
+          await listAnimations();
+        } else {
+          await animateCommand(params[0], {
+            type: options.type as any,
+            speed: options.speed ? parseInt(options.speed) : undefined,
+            fps: options.fps ? parseInt(options.fps) : undefined,
+            loop: options.loop ? parseInt(options.loop) : undefined,
+            direction: options.direction as any,
+            theme: options.theme,
+            save: options.save || false,
+            preview: options.preview || false
+          });
+        }
         break;
         
       default:
