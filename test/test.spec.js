@@ -102,7 +102,7 @@ function runTests() {
   test('aahook --version should show version', () => {
     const result = runAahook('--version');
     assert(result.exitCode === 0, 'Exit code should be 0');
-    assert(result.stdout.includes('0.3.0'), 'Should show version 0.3.0');
+    assert(result.stdout.includes('0.4.0'), 'Should show version 0.4.0');
   });
   
   // Test 2: Help command
